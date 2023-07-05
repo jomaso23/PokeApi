@@ -12,10 +12,10 @@ const PokemonForm = ({add}) => {
         add(pokemonReference)
     }
     return (
-        <form onSubmit={addPokemon}>
-            <div>
+        <form  onSubmit={addPokemon}>
+            <div >
             {/*este input sera el endpoint de la ruta de peticionAxios(), como se la puedo pasar? */}
-                <input ref={pokeRef} placeholder='cual pokemon quieres buscar?'></input>
+                <input ref={pokeRef} placeholder='cual pokemon quieres buscar?' isRequired defaultValue={'pikachu'}></input>
                 <button type='submit' className='btn btn-primary'>Buscar</button>
 
             </div>

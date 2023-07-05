@@ -6,43 +6,33 @@ const PokemonCard = () => {
 
     const [pokemons, setPokemons] = useState([]);
 
-    useEffect(() => {
-       console.log('pokeApi iniciada');
-        return () => {
-            
-        };
-    }, [pokemons]);
+  
 
     const addPokemon = (pokemon) => {
-        const tempPokemons=[]
+        const tempPokemons=[...pokemons];
         tempPokemons.push(pokemon);
         setPokemons(tempPokemons)
+        //console.log(pokemons)
     }
 
     return (
-        <div>
-            <div className='card'>
-                <div className='card-header'>
-
-                </div>
-                <div className='card-body'>
+        <div className='container-fluid text-center row'>
+           
+                    <h1>Pokedex</h1>
 
                 {pokemons.map((pokemon,index) =>{
                     return(
                         <Pokemon1
+                            key={index}
                             newPokemon={pokemon}
                         ></Pokemon1>
                     )
                 })}
-                    
-                </div>
-                <div className='card-footer'>
+               <div>
                     <PokemonForm
                         add = {addPokemon}
                     ></PokemonForm>
-                </div>
-                
-            </div>
+               </div>
         </div>
     );
 }
